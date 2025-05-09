@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel-Perfect HTML Conversion & Cart Drawer Functionality</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <!-- starting header area -->
+  <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="nav_container">
+        <span class="responsive_menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect y="4" width="24" height="2" rx="1" fill="currentColor" />
+            <rect y="11" width="24" height="2" rx="1" fill="currentColor" />
+            <rect y="18" width="24" height="2" rx="1" fill="currentColor" />
+          </svg></span>
+        <div class="nav_left">
+          <ul>
+            <li class="txt_black">
+              <a href="#">Shop</a>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9L12 15L18 9" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+            <li><a href="#">Our Story</a></li>
+            <li class="txt_black">
+              <a href="#">Science</a>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M6 9L12 15L18 9" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+            <li><a href="#">Result</a></li>
+          </ul>
+        </div>
+        <div class="nav_center">
+          <a href="#" class="logo">
+            <img src="./asset/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="nav_right">
+          <button class="lang-btn">
+            ENG
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9L12 15L18 9" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="lang-btn">
+            USD
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M6 9L12 15L18 9" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="cart-btn" id="openCart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7a1 1 0 0 0 .9 1.3h10.9M7 13l.6-1.2M9 21a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+            <span class="cart-count">2</span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+    <!-- //cart sidebar section -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Your cart</h2>
+        <button class="close-cart" id="closeCart">×</button>
+      </div>
+
+
+
+      <div class="cart-items" id="cartItems">
+
+      </div>
+
+
+
+      <div class="cart-summary">
+        <div class="total-row">
+          <span class="total-label">total</span>
+          <span class="total-value" id="cartTotal">$29 </span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+    </div>
+  </header>
+  <!-- ending header area -->
+
+  <!-- starting main area -->
+  <main>
+    <div id="main_container">
+      <div class="product_gallery">
+        <div class="main_images">
+          <img src="./asset/product_main.png" alt="Product Image" />
+        </div>
+        <div class="thumbnails">
+          <img src="./asset/thumbnail.png" alt="Thumbnail" class="thumb-img active">
+          <img src="./asset/thumbnail1.png" alt="Thumbnail 1" class="thumb-img">
+          <img src="./asset/thumbnail2.jpg" alt="Thumbnail 2" class="thumb-img">
+          <img src="./asset/thumbnail3.png" alt="Thumbnail 3" class="thumb-img">
+        </div>
+      </div>
+      <div class="main_content_and_button">
+        <div class="product_content">
+          <span class="best_seller">Best Seller</span>
+
+          <h1 class="product_title">
+            Helio Pet Device <span>TM</span>
+          </h1>
+          <div>⭐⭐⭐⭐⭐ 4.9 (1,021 reviews)</div>
+          <p class="product_description">
+          <div class="circular-image-container">
+            <img id="rounded_images" src="/asset/profile.jpg" alt="">
+            <div class="user-text-details">
+              <span class="user-name">Linda S.</span>
+              <span class="user-timestamp">1 year ago</span>
+            </div>
+          </div>
+          “We are BOTH so THANKFUL! I purchased this for my 12 year old Lab mix as he's got mobility issues with the
+          back legs. It's been 3 weeks and already a difference!”
+          </p>
+        </div>
+        <div class="features-section">
+
+          <ul>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Reduce aches &amp; pains with 5-minute sessions.
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Cold Laser Therapy helps with Pain, Inflammation &amp; more.
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Professional Grade LLLT with 5 Laser Diodes.
+            </li>
+          </ul>
+        </div>
+        <div class="price-section">
+          <span class="original-price">$369.00</span>
+          <span class="discounted-price">$249.00</span>
+        </div>
+
+        <div class="add-to-cart-section">
+          <button class="add-to-cart-button">Add to Cart</button>
+          <div class="quantity-control">
+            <button class="quantity-btn">-</button>
+            <input type="text" value="1" class="quantity-input">
+            <button class="quantity-btn">+</button>
+          </div>
+        </div>
+        <div class="payment-info">
+          <img src="./asset//Screenshot (22).png" alt="" class="payment-icon">
+
+        </div>
+
+        <div class="shipping-info">
+          <p>✓ <span style="color: rgb(19, 158, 238);">30 day money back </span> guarantee</p>
+          <p>🚚 Expected <span style="color: rgb(19, 158, 238);">delivery in 2-4 business</span> days</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <section class="professional-section">
+    <div class="content-wrapper">
+      <div class="text-content">
+        <h1 class="heading"><span class="highlight">Professional Grade,</span> Patented Design.</h1>
+        <p class="description">It's required to have a <span class="strong-text">strong enough output</span> power of
+          3-10 Joules per cm² with correct wavelengths (660nm + 850nm).</p>
+
+        <div class="features-list">
+          <div class="feature-item">
+            <span class="number">1</span>
+            <p>The treatment head is 340% bigger so it can finish a treatment in <span class="strong-text">3
+                minutes</span>, vs 10-20 minutes.</p>
+          </div>
+
+          <div class="feature-item">
+            <span class="number">2</span>
+            <p>Has <span class="strong-text">3 Modes of Power</span> to accommodate to any area. It also uses
+              wavelengths 660nm and 850nm.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="device-showcase">
+        <div class="glow-effect"></div>
+        <img src="./asset/devices_img.png" alt="Professional Device" class="device-image">
+        <div class="power-badge">800% More Power</div>
+        <div class="time-badge">3 Minutes</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rating_section">
+    <img src="./asset/ratingImg.png " alt="Rating Image">
+  </section>
+
+
+  <script src="/script.js"></script>
+</body>
+
+</html>
