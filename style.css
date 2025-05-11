@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -38,7 +37,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Navigation */
@@ -50,6 +49,7 @@ body {
   height: 82px;
   margin: 0 auto;
   background: #fff;
+  padding: 0 10px; /* Add padding for mobile */
 }
 
 .nav_left ul {
@@ -72,9 +72,11 @@ body {
   line-height: 20px;
   letter-spacing: 0;
 }
+
 .responsive_menu {
   display: none;
 }
+
 .txt_black a {
   color: var(--primary-text);
 }
@@ -107,7 +109,6 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
- 
 }
 
 .cart-count {
@@ -141,11 +142,14 @@ body {
   background: white;
   padding: 30px;
   border-radius: 10px;
+  overflow: hidden; /* Prevent overflow */
+  width: 100%;
 }
 
 /* Product Gallery */
 .product_gallery {
   position: relative;
+  overflow: hidden; /* Contain overflow */
 }
 
 .main_images {
@@ -159,9 +163,11 @@ body {
   border-radius: 5px;
   object-fit: cover;
 }
+
 .nav_center {
   display: none;
 }
+
 /* Thumbnails */
 .thumbnails {
   display: flex;
@@ -206,6 +212,7 @@ body {
   line-height: 106%;
   font-weight: 500;
   margin: 10px 0;
+  overflow-wrap: break-word; /* Prevent text overflow */
 }
 
 .txt_blue {
@@ -260,7 +267,7 @@ body {
 .features-section ul {
   list-style: none;
   padding: 0;
-  margin: 15px 0;
+  margin: if 15px 0;
 }
 
 .features-section li {
@@ -293,7 +300,8 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: -23px 0;
+  margin: 20px 0; /* Fixed negative margins */
+  width: 100%;
 }
 
 .add-to-cart-button {
@@ -329,6 +337,7 @@ body {
   display: flex;
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .payment-icon {
@@ -372,7 +381,7 @@ body {
 }
 
 .content-wrapper {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -435,19 +444,22 @@ body {
 .device-showcase {
   position: relative;
   text-align: center;
-  height: 589px;
+  height: auto; /* Changed from fixed height */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 659px;
+  width: 100%; /* Changed from fixed width */
+  max-width: 659px;
   overflow: hidden;
-  left: 30%;
+  left: 0; /* Changed from 30% to resolve position issues */
+  margin: 0 auto; /* Center the showcase */
 }
 
 .device-image {
   position: relative;
   z-index: 3;
-  width: 675px;
+  max-width: 100%; /* Changed from fixed width */
+  height: auto;
   filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.4));
 }
 
@@ -457,8 +469,8 @@ body {
   top: 30%;
   left: 60%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 300px;
+  width: 300px; /* Reduced size for better mobile display */
+  height: 200px;
   background: radial-gradient(
     circle,
     rgba(255, 0, 128, 0.4) 0%,
@@ -477,7 +489,7 @@ body {
   padding: 10px 20px;
   border-radius: 25px;
   font-size: 16px;
-  right: 60%;
+  right: 10%; /* Changed positioning for better mobile display */
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(46, 204, 113, 0.5);
 }
@@ -485,8 +497,16 @@ body {
 .power-badge {
   top: 60%;
 }
+
 .rating_section {
-  margin: 20 -10px;
+  margin: 20px 0; /* Fixed from negative margins */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.rating_section img {
+  max-width: 100%;
+  height: auto;
 }
 
 .time-badge {
@@ -509,7 +529,8 @@ body {
   position: fixed;
   top: 0;
   right: -400px;
-  width: 400px;
+  width: 100%; /* Full width on small screens */
+  max-width: 400px; /* Max width on larger screens */
   height: 100vh;
   background-color: white;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
@@ -753,40 +774,50 @@ body {
   .responsive_menu {
     display: block;
   }
+  
   .nav_left {
     display: none;
   }
+  
   .lang-btn {
     display: none;
   }
+  
   .product_gallery {
     margin-bottom: 20px;
     display: flex;
     flex-direction: row-reverse;
     gap: 10px;
   }
+  
   .nav_center {
     display: block;
   }
+  
   .best_seller {
     display: none;
   }
+  
   .main_images {
     flex: 1;
     margin-bottom: 10px;
   }
+  
   .professional-section {
     display: none;
   }
+  
   .shipping-info {
     display: none;
   }
+  
   .thumbnails {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    max-height: 450px;
+    max-height: 400px; /* Adjusted for better mobile display */
     padding-right: 5px;
+    width: auto; /* Auto width instead of fixed */
   }
 
   .thumbnails img {
@@ -796,6 +827,7 @@ body {
     margin-bottom: 8px;
     object-fit: cover;
   }
+  
   .cart-container {
     max-width: 100%;
     margin: 20px 0;
@@ -811,6 +843,7 @@ body {
   .original-price {
     display: none;
   }
+  
   .current-price {
     font-size: 24px;
     font-weight: 700;
@@ -843,33 +876,38 @@ body {
 
   .add-to-cart-button {
     width: 100%;
-    padding: 16px;
-    font-size: 16px;
+    padding: 12px 1px;
+    font-size: 12px;
     font-weight: 500;
-
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s;
     text-align: center;
   }
 
   .add-to-cart-button:hover {
     opacity: 0.9;
   }
+  
   .rating_section {
-    margin: 0 -30px;
+    margin: 20px 0; /* Fixed negative margins */
+    width: 100%;
+    overflow: hidden;
   }
+  
   .rating_section img {
-    width: 636px;
-    height: 562px;
+    width: 100%;
+    height: auto;
+    max-width: 636px; /* Maintain aspect ratio */
   }
+  
   .add-to-cart-section {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     gap: 15px;
-    margin: -53px 0;
+    margin: 20px 0; /* Fixed negative margins */
+    width: 100%;
   }
 }
 
@@ -886,7 +924,8 @@ body {
 
   .product_title {
     font-size: 32px;
-    overflow: hidden;
+    overflow-wrap: break-word; /* Handle long text */
+    word-wrap: break-word;
   }
 
   .circular-image-text {
@@ -907,7 +946,8 @@ body {
   }
 
   .thumbnails {
-    width: 60px;
+    width: auto;
+    max-width: 60px;
   }
 
   .thumbnails img {
@@ -924,4 +964,25 @@ body {
   .features-section li {
     font-size: 14px;
   }
+  
+  /* Fix any other small mobile issues */
+  .device-showcase {
+    height: auto;
+  }
+  
+  .glow-effect {
+    width: 150px;
+    height: 100px;
+  }
+  
+  .power-badge, .time-badge {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
 }
